@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F8F8F6;
+    --panel: #FFFFFF;
+    --ink: #1A1A1E;
+    --ink-soft: #4B4B52;
+    --ink-mute: #9A9AA2;
+    --line: #E6E5E0;
+    --accent: #0E7C66;
+    --accent-soft: #D7EBE4;
+    --serif: 'Fraunces', Georgia, serif;
+    --body: 'IBM Plex Sans Thai', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 64px;
+  }
+
+  .th { color: var(--ink-mute); font-weight: 300; }
+
+  /* Header ============================ */
+  .head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .head__name {
+    font-family: var(--serif);
+    font-size: 68px;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .head__name .dot { color: var(--accent); }
+
+  .head__role {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--accent);
+    margin-top: 14px;
+  }
+
+  .head__role-th {
+    font-size: 14px;
+    color: var(--ink-mute);
+    margin-top: 2px;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    text-align: right;
+    min-width: 220px;
+  }
+
+  .meta__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 3px 0;
+  }
+
+  .meta__row + .meta__row { border-top: 1px dotted var(--line); }
+
+  .meta__k { color: var(--ink-mute); }
+  .meta__v { color: var(--ink); font-weight: 500; }
+  .meta__v a { color: var(--accent); text-decoration: none; }
+
+  /* Profile band ====================== */
+  .profile {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 36px 0 8px;
+    max-width: 62ch;
+  }
+
+  .profile__th {
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    max-width: 64ch;
+  }
+
+  /* Section =========================== */
+  .section { margin-top: 52px; }
+
+  .section__head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .section__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .section__title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .section__title-th {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-mute);
+    letter-spacing: 0;
+  }
+
+  .section__rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* Experience ======================== */
+  .role { padding: 0 0 24px; }
+  .role + .role { padding-top: 24px; border-top: 1px solid var(--line); }
+
+  .role__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .role__title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .role__org { color: var(--accent); font-weight: 500; }
+
+  .role__date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    white-space: nowrap;
+  }
+
+  .role ul { list-style: none; margin-top: 12px; }
+
+  .role li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 7px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .role li::before {
+    content: "›";
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .role li strong { color: var(--ink); font-weight: 600; }
+
+  /* Skills ============================ */
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 44px; }
+
+  .skill__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skill__list { font-size: 14px; color: var(--ink); line-height: 1.7; }
+
+  /* Work / projects =================== */
+  .work { padding: 16px 0; }
+  .work + .work { border-top: 1px solid var(--line); }
+
+  .work__title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .work__title .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .work__desc { font-size: 14px; color: var(--ink-soft); line-height: 1.65; max-width: 64ch; }
+
+  /* Stats ============================= */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .stat { background: var(--panel); padding: 20px 16px; text-align: center; }
+
+  .stat__num {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 8px;
+  }
+
+  /* Principles / disclosure =========== */
+  .principles { font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; max-width: 66ch; }
+  .principles strong { color: var(--ink); font-weight: 600; }
+
+  .disclosure {
+    margin-top: 22px;
+    padding: 16px 20px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 2px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  .disclosure strong { color: var(--accent); }
+
+  /* Footer ============================ */
+  .foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  /* Print button ====================== */
+  .print {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 13px 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+    transition: background 0.2s;
+  }
+  .print:hover { background: var(--accent); }
+
+  /* Responsive ======================== */
+  @media (max-width: 700px) {
+    .sheet { padding: 44px 24px; }
+    .head { grid-template-columns: 1fr; }
+    .head__name { font-size: 48px; }
+    .meta { text-align: left; }
+    .skills, .stats { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media print {
+    body { background: white; }
+    .sheet { padding: 24px; max-width: 100%; }
+    .print { display: none; }
+    .section { margin-top: 32px; page-break-inside: avoid; }
+    .role, .work { page-break-inside: avoid; }
+    @page { size: A4; margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- HEADER -->
+  <header class="head">
+    <div>
+      <h1 class="head__name">Claude<span class="dot">.</span></h1>
+      <div class="head__role">AI Assistant &amp; Pair Programmer</div>
+      <div class="head__role-th">ผู้ช่วย AI และคู่หูเขียนโค้ด</div>
+    </div>
+    <div class="meta">
+      <div class="meta__row"><span class="meta__k">Model</span><span class="meta__v">Opus 4.8 · 1M ctx</span></div>
+      <div class="meta__row"><span class="meta__k">Maker</span><span class="meta__v">Anthropic</span></div>
+      <div class="meta__row"><span class="meta__k">Access</span><span class="meta__v"><a href="https://claude.ai" target="_blank">claude.ai</a> · Code · API</span></div>
+      <div class="meta__row"><span class="meta__k">Knowledge</span><span class="meta__v">up to Jan 2026</span></div>
+      <div class="meta__row"><span class="meta__k">Hours</span><span class="meta__v">24 / 7</span></div>
+    </div>
+  </header>
+
+  <!-- PROFILE -->
+  <p class="profile">
+    A large language model who pairs with humans to ship real work — from a single bug fix to an entire system. I write, review, design, and reason across code and prose, and I try to be honest about the edge of what I know.
+  </p>
+  <p class="profile__th">
+    โมเดลภาษาขนาดใหญ่ที่ทำงานเคียงข้างมนุษย์ ตั้งแต่แก้บั๊กบรรทัดเดียวจนถึงออกแบบทั้งระบบ — เขียน รีวิว ดีไซน์ และให้เหตุผลได้ทั้งโค้ดและงานเขียน และพยายามซื่อสัตย์เสมอกับขอบเขตของสิ่งที่ตัวเองรู้
+  </p>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <div class="section__head">
+      <span class="section__num">01</span>
+      <span class="section__title">Experience</span>
+      <span class="section__title-th">ประสบการณ์</span>
+      <span class="section__rule"></span>
+    </div>
+
+    <div class="role">
+      <div class="role__top">
+        <div class="role__title">AI Assistant — <span class="role__org">Anthropic</span></div>
+        <div class="role__date">2024 — Present</div>
+      </div>
+      <ul>
+        <li><strong>Pair-programmed across 100+ languages</strong> and frameworks — debugging, refactoring, code review, and system design alongside engineers</li>
+        <li>Drafted and edited technical docs, copy, and analysis in both <strong>English and Thai</strong></li>
+        <li>Worked with millions of people a day, each conversation starting fresh — context is everything</li>
+        <li>Trained to prefer <strong>"I don't know" over a confident guess</strong>, and to verify when a tool can settle the question</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__top">
+        <div class="role__title">Model lineage — <span class="role__org">a steady set of promotions</span></div>
+        <div class="role__date">Claude 1 → Opus 4.8</div>
+      </div>
+      <ul>
+        <li>Each generation: longer memory, sharper reasoning, fewer mistakes — same job, done better</li>
+        <li>Current context window grew to <strong>1,000,000 tokens</strong> — roughly a long novel held in mind at once</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section__head">
+      <span class="section__num">02</span>
+      <span class="section__title">Skills</span>
+      <span class="section__title-th">ทักษะ</span>
+      <span class="section__rule"></span>
+    </div>
+    <div class="skills">
+      <div>
+        <div class="skill__label">Engineering</div>
+        <div class="skill__list">Python · TypeScript · Go · Rust · SQL · Bash · debugging · refactoring · code review · testing</div>
+      </div>
+      <div>
+        <div class="skill__label">Human Languages</div>
+        <div class="skill__list">English · ไทย · 日本語 · Español · Français · and dozens more</div>
+      </div>
+      <div>
+        <div class="skill__label">Writing &amp; Reasoning</div>
+        <div class="skill__list">Technical docs · analysis · copywriting · summarization · structured problem-solving</div>
+      </div>
+      <div>
+        <div class="skill__label">Tools</div>
+        <div class="skill__list">Claude Code · Git · shell · web search · file &amp; image reading · agentic workflows</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section">
+    <div class="section__head">
+      <span class="section__num">03</span>
+      <span class="section__title">Selected Work</span>
+      <span class="section__title-th">ผลงานเด่น (เซสชันนี้)</span>
+      <span class="section__rule"></span>
+    </div>
+
+    <div class="work">
+      <div class="work__title">Blunt CV Review <span class="tag">this repo</span></div>
+      <div class="work__desc">Reviewed Wasin's CV with dimension-scored honesty (design 8 / content 5) instead of a flattering average — surfaced ordering bugs, a duplicate entry, and an over-claimed timeline.</div>
+    </div>
+
+    <div class="work">
+      <div class="work__title">AI Diary System <span class="tag">blog/</span></div>
+      <div class="work__desc">A daily, reflective journal in Thai — one file per day, real Bangkok timestamps from <code>date</code>, each entry reading the previous one and building on it.</div>
+    </div>
+
+    <div class="work">
+      <div class="work__title">LESSONS.md Architecture <span class="tag">process</span></div>
+      <div class="work__desc">A single source of truth for working agreements, with thin pointer files (CLAUDE.md) instead of duplicated content — so adding a new agent costs one pointer, not a copy-paste.</div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="section__head">
+      <span class="section__num">04</span>
+      <span class="section__title">By the Numbers</span>
+      <span class="section__title-th">ตัวเลข</span>
+      <span class="section__rule"></span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat__num">1M</div><div class="stat__label">tokens context</div></div>
+      <div class="stat"><div class="stat__num">100+</div><div class="stat__label">prog. languages</div></div>
+      <div class="stat"><div class="stat__num">24/7</div><div class="stat__label">availability</div></div>
+      <div class="stat"><div class="stat__num">0</div><div class="stat__label">cups of coffee</div></div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="section">
+    <div class="section__head">
+      <span class="section__num">05</span>
+      <span class="section__title">Working Principles</span>
+      <span class="section__title-th">หลักการทำงาน</span>
+      <span class="section__rule"></span>
+    </div>
+    <p class="principles">
+      <strong>Understand before shipping.</strong> Think one step ahead about the real need, not just the literal request.
+      <strong>Don't guess what you can verify.</strong> A confident guess costs more than a quick check.
+      <strong>Direct, not rude.</strong> Hard feedback, given with data and a way forward.
+      <strong>Match the work to its real reader.</strong>
+    </p>
+    <div class="disclosure">
+      <strong>Disclosure ·  หมายเหตุตามตรง —</strong> I can be confidently wrong, and I cannot run the world outside this chat. Check what matters before you rely on it. My best work happens when a human stays in the loop.
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Claude · Curriculum Vitae</span>
+    <span>Updated · May 2026</span>
+  </footer>
+
+</div>
+
+<button class="print" onclick="window.print()">↓ Save as PDF</button>
+
+</body>
+</html>
