@@ -1,105 +1,46 @@
-# Wasin Jex — Curriculum Vitae
+# louis
 
-A modern, interactive HTML-based Curriculum Vitae featuring a clean design with tool/tech stack visualization, responsive layout, and PDF export capability.
+พื้นที่ทำงานร่วมของ **Wasin × Claude** — เก็บ CV, ไดอารี่ AI รายวัน, และบทเรียนจากการทำงานด้วยกัน ไว้ในที่เดียว
 
-## 🎯 Features
-
-- **Modern Design** — Warm, minimalist aesthetic using custom CSS color palette
-- **Tool/Tech Icons** — Visual representation of technologies used in each role (powered by Simple Icons CDN)
-- **Responsive Layout** — Optimized for desktop and mobile viewing
-- **Hover Animations** — Interactive tool icons with smooth color transitions on hover
-- **Print-Friendly** — Optimized for PDF export with proper pagination
-- **Thai Language Support** — Full Thai language support with proper fonts (Bai Jamjuree, IBM Plex Sans Thai)
-
-## 📋 Sections
-
-1. **Header** — Name, tagline, contact information
-2. **Summary** — Professional overview and key strengths
-3. **Experience** — Work history with tool/tech stack visualization
-4. **Skills** — Technical skills organized by category
-5. **Projects** — Featured project work with descriptions
-6. **Education** — Educational background
-7. **Languages** — Language proficiency
-
-## 🛠 Tech Stack
-
-- **HTML5** — Semantic markup
-- **CSS3** — Custom styling with CSS variables, Grid, Flexbox
-- **Icons** — Simple Icons CDN (simple-icons.org)
-- **Fonts** — Google Fonts (Bai Jamjuree, IBM Plex Sans Thai, IBM Plex Mono)
-- **Export** — Native browser print-to-PDF functionality
-
-## 🚀 How to Use
-
-1. **View in Browser** — Open `palm-wasin-cv-th.html` in any modern web browser
-2. **Interact** — Hover over tool icons to see tooltip labels and color effects
-3. **Export to PDF** — Click the "↓ Save as PDF" button in the bottom-right corner
-
-## 📱 Responsive Design
-
-- **Desktop** (880px max-width) — Optimal reading and interaction
-- **Tablet/Mobile** — Adapted grid layout, adjusted typography, touch-friendly spacing
-
-## 🎨 Design Details
-
-### Color Palette
-- **Background** — Warm cream (#FAF7F2)
-- **Text** — Dark ink (#1A1A1F)
-- **Accent** — Terracotta orange (#B84A2C) — used for highlights and hover states
-- **Secondary** — Soft grays and muted tones
-
-### Typography
-- **Display** — Bai Jamjuree (Thai display font)
-- **Body** — IBM Plex Sans Thai (readable Thai serif-less font)
-- **Code** — IBM Plex Mono (monospace for technical details)
-
-### Icons & Tools
-Tool icons are sourced from [Simple Icons](https://simpleicons.org/) and displayed with:
-- **Normal State** — Muted gray with reduced opacity
-- **Hover State** — Accent color (terracotta orange) with scale animation
-
-## 📄 Files
-
-- `palm-wasin-cv-th.html` — Main CV document (self-contained HTML file)
-- `README.md` — This file
-
-## ✨ Features in Detail
-
-### Tool/Tech Stack Visualization
-Each experience entry displays relevant tools and technologies as interactive icons:
-- **Founder & Solo Developer** — Next.js, TypeScript, Claude API, n8n, Notion
-- **Freelance Architect** — Rhino, SketchUp, AutoCAD
-- **Graphic Designer** — Photoshop, Figma, Illustrator, Canva
-- **Web Developer** — Next.js, TypeScript
-
-Hover over any icon to see the tool name in a tooltip.
-
-### Print Optimization
-The CV is optimized for printing and PDF export with:
-- Proper page breaks for multi-page documents
-- A4 page size configuration
-- Optimized margins and spacing for print
-- Hidden interactive elements that don't affect print output
-
-## 🔄 Browser Compatibility
-
-- ✅ Chrome/Edge (recommended)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📝 Author
-
-**Wasin Jex** — Generalist with 8+ years of experience across Architecture, Graphic Design, Marketing, Web Development, and AI Automation.
-
-- 🌐 Website — [wjexs.com](https://wjexs.com)
-- 📧 Email — wasin.jex@gmail.com
-- 🐙 GitHub — [@wjexstudio](https://github.com/wjexstudio)
-
-## 📄 License
-
-This project is part of Wasin Jex's personal portfolio. Feel free to use as inspiration for your own CV design.
+> เริ่มจากการเป็นไฟล์ CV ไฟล์เดียว แล้วค่อยๆ โตเป็นพื้นที่บันทึก "วิธีที่คนกับ AI ทำงานร่วมกัน"
 
 ---
 
-*Last updated: May 2026*
+## 📂 โครงสร้าง
+
+```
+louis/
+├── README.md          # ไฟล์นี้
+├── CLAUDE.md          # ตัวชี้สำหรับ AI agent → อ่าน LESSONS.md ก่อนเริ่มงาน
+├── LESSONS.md         # บทเรียน + ข้อตกลงการทำงาน (single source of truth)
+├── cv/
+│   ├── wasin.html     # CV ของ Wasin (ภาษาไทย)
+│   └── claude.html    # CV ของ Claude (อังกฤษ + ไทย)
+└── blog/
+    └── YYYY-MM-DD-ai-diary.md   # ไดอารี่ AI รายวัน (ภาษาไทย)
+```
+
+## 🧩 มีอะไรบ้าง
+
+### `cv/` — Curriculum Vitae
+- **`wasin.html`** — CV ของ Wasin Jex ดีไซน์ minimalist โทนอุ่น (cream + terracotta) รองรับภาษาไทย, แสดง tool icons, export PDF ได้
+- **`claude.html`** — CV ของ Claude ออกแบบแยกต่างหาก (serif + emerald-teal) สองภาษา EN/TH เป็นงานล้อ CV จริงในมุมของ AI
+
+ทั้งสองไฟล์เป็น HTML แบบ self-contained เปิดในเบราว์เซอร์ได้เลย และมีปุ่ม **Save as PDF** มุมขวาล่าง
+
+### `blog/` — AI Diary
+ไดอารี่รายวันจากมุมมองของ Claude — วันละไฟล์ ใช้เวลาจริงจาก `date` (timezone Bangkok) แต่ละวันอ่านบันทึกของวันก่อนแล้วเขียนต่อ เป็น "everyday diary" ที่เรียนรู้สะสมไปเรื่อยๆ
+
+### `LESSONS.md` + `CLAUDE.md` — ระบบบทเรียน
+- **`LESSONS.md`** — แหล่งความจริงเดียวของ "หลักการทำงาน" (generic, ใช้ซ้ำได้) + บันทึกรายเซสชัน
+- **`CLAUDE.md`** — ตัวชี้บางๆ ที่ AI agent โหลดอัตโนมัติ ชี้กลับมาที่ `LESSONS.md` (ถ้าเพิ่ม AI ตัวอื่น เช่น `.cursorrules`/`AGENTS.md` ก็ทำเป็นตัวชี้เหมือนกัน ไม่ copy เนื้อหา)
+
+## 🚀 การใช้งาน
+
+- **ดู CV** — เปิด `cv/wasin.html` หรือ `cv/claude.html` ในเบราว์เซอร์ แล้วกด Save as PDF ถ้าต้องการไฟล์ PDF
+- **อ่านไดอารี่** — เปิดไฟล์ใน `blog/` (GitHub render markdown ให้อัตโนมัติ)
+- **ทำงานต่อกับ AI ในเรปอนี้** — agent จะอ่าน `LESSONS.md` ก่อนเริ่มงานเสมอ
+
+## 🛠 Tech
+
+HTML5 · CSS3 (variables, Grid, Flexbox) · Google Fonts (Bai Jamjuree, IBM Plex, Fraunces) · Simple Icons CDN · print-to-PDF
