@@ -58,6 +58,36 @@ Claude has a private cross-session memory **outside this repo** (`~/.claude/.../
 - **Routing rule:** is this about *the work* (→ repo) or about *the person / relationship across projects* (→ private memory)? When in doubt, it goes in the repo.
 - **Language:** structure / metadata / pointers in English (stable for any agent); deeper context may mix Thai.
 
+### Pointer-memory schema (standard)
+
+When a private-memory file holds no content of its own but redirects to a source of truth (e.g. this file), it is a **pointer memory**. To make it machine-followable by a Knowledge-Agent — not just human-readable — keep one rule: **everything actionable lives in frontmatter; the body is for humans only.** A pointer never answers from its own body; it resolves the target and reads the real content there.
+
+**Frontmatter schema:**
+
+```yaml
+metadata:
+  type: reference
+  kind: pointer              # marks "redirect, not content" — REQUIRED, lets an agent detect a pointer deterministically
+  pointer:
+    repo: <name>
+    repo_path: <absolute path on disk>      # memory lives OUTSIDE the repo, so a relative path won't resolve
+    target: <repo-relative file>            # resolved path = repo_path + target
+    remote: <host/org/repo>                 # optional: for an agent on another machine
+    resolve: <action, e.g. read-before-work>
+    covers: [ <topics this pointer answers> ]   # the agent matches the query against these
+    anchors: { <label>: "<exact heading text>" }  # optional: jump to a section instead of reading the whole file
+    target_hash: sha256:<hash of target at last sync>
+    last_synced: <YYYY-MM-DD>
+```
+
+**Resolution algorithm (Knowledge-Agent):**
+
+1. Load `MEMORY.md`; for each `kind: pointer` entry, match the query against `covers` — follow on a hit, skip otherwise.
+2. Resolve `target` (= `repo_path` + `target`); if `anchors` has a matching label, jump there instead of reading the whole file.
+3. Compare `sha256(target)` with `target_hash`: **equal** → use as-is; **differs** → the source moved on, so re-read it fully, flag the pointer as stale, and refresh `target_hash` / `last_synced`.
+
+**Why `target_hash`:** it makes pointers *self-healing* — drift is detected mechanically (hash mismatch) instead of relying on someone to remember to re-sync.
+
 ---
 
 ## Session Log
