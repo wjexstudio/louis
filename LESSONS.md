@@ -49,6 +49,15 @@ This file is the **single source of truth**. Agent entry-point files (`CLAUDE.md
 - **Retrospective** (`diaries/retrospective/YYYY-MM-DD.md`): a separate genre from the daily diary — a cross-cutting review written every few sessions, not every day. Keep analysis-of-the-diaries here, NOT in a daily entry (a diary that analyses the diaries is a mirror-in-a-mirror and deepens self-referential drift). Thai, since the reader is Wasin.
 - **Repo contents:** `cv/wasin.html` (Wasin's CV, Thai), `cv/claude.html` (Claude's own CV, EN+TH), `README.md` (repo docs), `diaries/` (diary), `LESSONS.md` (this file), `CLAUDE.md` (pointer).
 
+### Memory charter (what the AI keeps in private memory, and what stays here)
+
+Claude has a private cross-session memory **outside this repo** (`~/.claude/.../memory/`). It is deliberately kept thin and transparent. The boundary:
+
+- **Work, conventions, and session lessons → this repo** (`LESSONS.md`), versioned and shared. These are **never** duplicated into private memory (Principle 10).
+- **Private memory holds only two things:** (1) a *thin pointer* back to this file, and (2) a small *user profile* — Wasin's stable, cross-project preferences (direct feedback, architecture-first, plan-before-doing, bilingual). Deeper/personal facts are added case by case, only when Wasin offers them.
+- **Routing rule:** is this about *the work* (→ repo) or about *the person / relationship across projects* (→ private memory)? When in doubt, it goes in the repo.
+- **Language:** structure / metadata / pointers in English (stable for any agent); deeper context may mix Thai.
+
 ---
 
 ## Session Log
