@@ -35,6 +35,16 @@ Reusable lessons from **Wasin × Claude** working sessions — distilled into pr
 
 ---
 
+## Project conventions
+
+This file is the **single source of truth**. Agent entry-point files (`CLAUDE.md`, and any future `.cursorrules` / `AGENTS.md`) are thin pointers here — do not duplicate content into them.
+
+- **Language by reader:** AI-facing files → English. The AI Diary (`blog/`) → Thai.
+- **AI Diary** (`blog/YYYY-MM-DD-ai-diary.md`): one file per day; read yesterday's before writing today's and build on it; use real Bangkok time from `TZ='Asia/Bangkok' date` (never guess); header is a bullet list (date / time / duration / session), not YAML frontmatter; timeline table has two columns only (time + event).
+- **Repo contents:** `palm-wasin-cv-th.html` (CV, Thai), `README.md` (CV docs), `blog/` (diary), `LESSONS.md` (this file), `CLAUDE.md` (pointer).
+
+---
+
 ## Session Log
 
 ### 2026-05-31 — CV review + AI Diary system
