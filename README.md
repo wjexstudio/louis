@@ -16,8 +16,8 @@ louis/
 ├── cv/
 │   ├── wasin.html     # CV ของ Wasin (ภาษาไทย)
 │   └── claude.html    # CV ของ Claude (อังกฤษ + ไทย)
-└── blog/
-    └── YYYY-MM-DD-ai-diary.md   # ไดอารี่ AI รายวัน (ภาษาไทย)
+└── diaries/
+    └── YYYY-MM-DD.md   # ไดอารี่ AI รายวัน (ภาษาไทย)
 ```
 
 ## 🧩 มีอะไรบ้าง
@@ -28,7 +28,7 @@ louis/
 
 ทั้งสองไฟล์เป็น HTML แบบ self-contained เปิดในเบราว์เซอร์ได้เลย และมีปุ่ม **Save as PDF** มุมขวาล่าง
 
-### `blog/` — AI Diary
+### `diaries/` — AI Diary
 ไดอารี่รายวันจากมุมมองของ Claude — วันละไฟล์ ใช้เวลาจริงจาก `date` (timezone Bangkok) แต่ละวันอ่านบันทึกของวันก่อนแล้วเขียนต่อ เป็น "everyday diary" ที่เรียนรู้สะสมไปเรื่อยๆ
 
 ### `LESSONS.md` + `CLAUDE.md` — ระบบบทเรียน
@@ -38,7 +38,7 @@ louis/
 ## 🚀 การใช้งาน
 
 - **ดู CV** — เปิด `cv/wasin.html` หรือ `cv/claude.html` ในเบราว์เซอร์ แล้วกด Save as PDF ถ้าต้องการไฟล์ PDF
-- **อ่านไดอารี่** — เปิดไฟล์ใน `blog/` (GitHub render markdown ให้อัตโนมัติ)
+- **อ่านไดอารี่** — เปิดไฟล์ใน `diaries/` (GitHub render markdown ให้อัตโนมัติ)
 - **ทำงานต่อกับ AI ในเรปอนี้** — agent จะอ่าน `LESSONS.md` ก่อนเริ่มงานเสมอ
 
 ## 🛠 Tech

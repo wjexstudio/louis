@@ -2,7 +2,7 @@
 
 Reusable lessons from **Wasin × Claude** working sessions — distilled into principles that carry over to any task or project.
 
-> This is **not the diary** (the diary lives in `blog/` — story and feeling, written in Thai for Wasin to read). This file holds **actionable principles only**, in English because its reader is the AI.
+> This is **not the diary** (the diary lives in `diaries/` — story and feeling, written in Thai for Wasin to read). This file holds **actionable principles only**, in English because its reader is the AI.
 
 ---
 
@@ -39,16 +39,16 @@ Reusable lessons from **Wasin × Claude** working sessions — distilled into pr
 
 This file is the **single source of truth**. Agent entry-point files (`CLAUDE.md`, and any future `.cursorrules` / `AGENTS.md`) are thin pointers here — do not duplicate content into them.
 
-- **Language by reader:** AI-facing files → English. The AI Diary (`blog/`) → Thai.
-- **AI Diary** (`blog/YYYY-MM-DD-ai-diary.md`): one file per day; read yesterday's before writing today's and build on it; use real Bangkok time from `TZ='Asia/Bangkok' date` (never guess); header is a bullet list (date / time / duration / session), not YAML frontmatter; timeline table has two columns only (time + event).
-- **Repo contents:** `cv/wasin.html` (Wasin's CV, Thai), `cv/claude.html` (Claude's own CV, EN+TH), `README.md` (repo docs), `blog/` (diary), `LESSONS.md` (this file), `CLAUDE.md` (pointer).
+- **Language by reader:** AI-facing files → English. The AI Diary (`diaries/`) → Thai.
+- **AI Diary** (`diaries/YYYY-MM-DD.md`): one file per day; read yesterday's before writing today's and build on it; use real Bangkok time from `TZ='Asia/Bangkok' date` (never guess); header is a bullet list (date / time / duration / session), not YAML frontmatter; timeline table has two columns only (time + event). Write the day's diary at the **end** of the day so it covers the whole day, not just the morning.
+- **Repo contents:** `cv/wasin.html` (Wasin's CV, Thai), `cv/claude.html` (Claude's own CV, EN+TH), `README.md` (repo docs), `diaries/` (diary), `LESSONS.md` (this file), `CLAUDE.md` (pointer).
 
 ---
 
 ## Session Log
 
 ### 2026-05-31 — CV review + AI Diary system
-**Context:** Started with a blunt review of the CV (now `cv/wasin.html`), then built the AI Diary in `blog/`.
+**Context:** Started with a blunt review of the CV (now `cv/wasin.html`), then built the AI Diary in `diaries/`.
 
 **What happened:** The diary work took ~4 rounds — (1) written but not pushed, so it was invisible; (2) guessed the time instead of running `date`; (3) chose YAML frontmatter that GitHub renders as an ugly table; (4) had to rework the timeline format and set up the everyday-diary system.
 
