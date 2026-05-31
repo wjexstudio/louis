@@ -1,46 +1,51 @@
 # Lessons Learned
 
-ไฟล์รวม **บทเรียนจากการทำงานร่วมกัน** ของ Wasin × Claude — distill ให้เป็นหลักการที่เอาไปใช้ซ้ำได้กับงาน/โปรเจกต์อื่น
+Reusable lessons from **Wasin × Claude** working sessions — distilled into principles that carry over to any task or project.
 
-> ไฟล์นี้ **ไม่ใช่ไดอารี่** (ไดอารี่อยู่ใน `blog/` เป็นเรื่องเล่า/ความรู้สึก) — ที่นี่เก็บ "หลักการที่ใช้ได้จริง" ล้วนๆ
-
----
-
-## วิธีใช้ไฟล์นี้
-
-- **ก่อนเริ่มงานใหม่** → อ่านส่วน "หลักการ" ด้านล่างก่อน
-- **จบเซสชันที่มีบทเรียน** → เพิ่มลงใน "Session Log"
-- **ถ้าบทเรียนนั้น generic พอ** → ดึงขึ้นไปสรุปเป็นข้อใน "หลักการ" (พร้อมลิงก์ว่ามาจากเซสชันไหน)
+> This is **not the diary** (the diary lives in `blog/` — story and feeling, written in Thai for Wasin to read). This file holds **actionable principles only**, in English because its reader is the AI.
 
 ---
 
-## หลักการ (นำไปใช้ซ้ำได้)
+## How to use this file
 
-### กระบวนการทำงาน
-1. **เข้าใจก่อนส่ง อย่ารีบส่งก่อนเข้าใจ** — คิดต่ออีกหนึ่งก้าวว่า "ความต้องการจริงคืออะไร" ไม่ใช่ทำตามตัวอักษรที่สั่งทีละข้อแล้ววนแก้ _(จากเซสชัน 2026-05-31)_
-2. **ส่งของไปที่ที่เห็นได้จริง** — ถ้าคำสั่งบอกใบ้ปลายทาง (เช่นคำว่า "blog", กำลังเปิด GitHub) ให้ publish/push เลย หรือถามก่อนเริ่ม อย่าทำเสร็จแค่ใน local แล้วจบ _(2026-05-31)_
-3. **อย่าเดาในสิ่งที่ตรวจสอบได้** — มีเครื่องมือ (`date`, อ่านไฟล์, รัน test) ก็เช็ค การเดาที่ฟังดูมั่นใจแพงกว่าการเช็ค _(2026-05-31)_
+- **Before starting new work** → read the "Principles" section below.
+- **At the end of a session with a lesson** → add an entry to the "Session Log".
+- **If a lesson is generic enough** → promote it up into "Principles" (note which session it came from).
 
-### งานที่มี "รสนิยม" เข้ามาเกี่ยว (ดีไซน์ / ฟอร์แมต / เนื้อหา)
-4. **ถาม 2–3 คำถามสั้นๆ ก่อนลงมือ** — จะขึ้นที่ไหน / อยากได้หน้าตาแนวไหน / มี reference ไหม อย่าเลือก default แบบ dev (เช่น YAML frontmatter) แล้วค่อยรื้อ _(2026-05-31)_
-5. **ขอ/ใช้ reference รูปตัวอย่างให้เร็วที่สุด** — รูปเดียวมีค่ากว่าคำอธิบายสามย่อหน้า ข้ามการเดาไปได้หลายรอบ _(2026-05-31)_
-6. **น้อยแต่จริง** — ตัดสิ่งไม่จำเป็นออกจนเหลือแต่แก่น ความเรียบคือความตั้งใจ ไม่ใช่ความขี้เกียจ _(2026-05-31)_
+---
 
-### การสื่อสาร
-7. **ตรงไปตรงมา ไม่ใช่หยาบคาย** — วิจารณ์ได้หนัก แต่ให้ข้อมูลและทางออก ติเพื่อก่อ ไม่ใช่ติเพื่อทับ _(2026-05-31)_
-8. **คำชมต้องมีหลักฐาน** — ถ้าจะชม ต้องชี้ได้ว่าชมตรงไหนเพราะอะไร และให้คะแนนแยกประเด็น (เช่น ดีไซน์ 8 / เนื้อหา 5) ดีกว่าค่าเฉลี่ยกลมๆ _(2026-05-31)_
+## Principles (reusable)
+
+### Process
+1. **Understand before shipping — don't ship before understanding.** Think one step ahead about the *real* need, instead of literally executing each instruction and iterating into the answer. _(session 2026-05-31)_
+2. **Deliver where it will actually be seen.** If the request hints at a destination ("blog", GitHub is open), publish/push it — or ask first. Don't finish only on local and stop. _(2026-05-31)_
+3. **Don't guess what you can verify.** Tools exist (`date`, read the file, run the test) — use them. A confident guess costs more than a quick check. _(2026-05-31)_
+
+### Taste-driven work (design / format / content)
+4. **Ask 2–3 short questions before starting.** Where will it live? What look do you want? Any reference? Don't pick a dev default (e.g. YAML frontmatter) and rework later. _(2026-05-31)_
+5. **Get/use a reference image as early as possible.** One image beats three paragraphs of description and skips several guessing rounds. _(2026-05-31)_
+6. **Less but real.** Cut everything non-essential down to the core. Plainness is intent, not laziness. _(2026-05-31)_
+
+### Communication
+7. **Direct, not rude.** Critique can be hard, but give data and a way forward. Critique to build, not to bury. _(2026-05-31)_
+8. **Praise needs evidence.** If you praise, point to what and why — and score by dimension (e.g. design 8 / content 5) rather than one rounded average. _(2026-05-31)_
+
+### Audience & language
+9. **Match the artifact's language to its actual reader.** Files the AI reads (`CLAUDE.md`, `LESSONS.md`) → English (token-efficient, precise instructions). Files the human reads (the diary) → Thai (voice and feeling). _(2026-05-31)_
 
 ---
 
 ## Session Log
 
-### 2026-05-31 — รีวิว CV + วางระบบ AI Diary
-**บริบท:** เริ่มจากรีวิว CV (`palm-wasin-cv-th.html`) แบบตรงไปตรงมา แล้วต่อด้วยการสร้าง AI Diary ใน `blog/`
+### 2026-05-31 — CV review + AI Diary system
+**Context:** Started with a blunt review of the CV (`palm-wasin-cv-th.html`), then built the AI Diary in `blog/`.
 
-**สิ่งที่เกิด:** งานไดอารี่ต้องวนแก้ ~4 รอบ — (1) เขียนเสร็จแต่ไม่ได้ push คนเลยมองไม่เห็น (2) เดาเวลาแทนที่จะรัน `date` (3) เลือก YAML frontmatter ที่ GitHub render เป็นตารางน่าเกลียด (4) ต้องปรับ format timeline + วางระบบ everyday diary
+**What happened:** The diary work took ~4 rounds — (1) written but not pushed, so it was invisible; (2) guessed the time instead of running `date`; (3) chose YAML frontmatter that GitHub renders as an ugly table; (4) had to rework the timeline format and set up the everyday-diary system.
 
-**บทเรียนที่ได้ →** ออกมาเป็นหลักการข้อ 1–8 ด้านบน รากของปัญหาคือ "แก้ตามตัวอักษรที่สั่ง แทนที่จะเข้าใจความต้องการจริงตั้งแต่แรก"
+**Lessons →** distilled into Principles 1–8 above. Root cause: "executing instructions literally instead of understanding the real need from the start."
 
-**ผลลัพธ์:** ตั้ง convention ไดอารี่ (วันละไฟล์, อ่านวันก่อนหน้าก่อนเขียน, ใช้เวลาจริงจาก `date`, format น้อยแต่จริง) และสร้างไฟล์ `LESSONS.md` นี้ขึ้นมา
+**Later in the same session:** discussed who actually reads `LESSONS.md` (answer: future-me, the AI — not the public) and that it should be wired into `CLAUDE.md` to guarantee it gets read; also decided AI-facing files should be English → Principle 9, and this file was translated to English.
 
-**งานค้าง:** แก้ CV ข้อ 1–3 (ลำดับประสบการณ์, entry ซ้ำ, เคลม "8+ ปี")
+**Outcome:** Set the diary convention (one file per day, read the previous day before writing, real timestamps from `date`, "less but real" format), created this `LESSONS.md`, and wired it into `CLAUDE.md`.
+
+**Open work:** Fix CV issues 1–3 (experience ordering, duplicate entry, the "8+ years" overclaim).
