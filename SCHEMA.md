@@ -25,6 +25,12 @@ The wiki has 3 layers:
 
 ---
 
+## Granularity
+
+The dashboard tracks **one row per project** — its current headline focus only. Per-task detail (e.g. louis's CV / diary / wiki workstreams) lives in that project's `status.md`, so the board stays a fast overview, not a task tracker. The hand-counted status tally line was dropped for the same reason — the columns are the source of truth. _(decided 2026-06-01, first ingest test)_
+
+---
+
 ## Update Flows
 
 ### When a goal arrives (Wasin → Claude)

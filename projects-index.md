@@ -1,20 +1,20 @@
 # Project Dashboard
 
-**Last updated:** 2026-06-01 11:28 น. (GMT+7)
+**Last updated:** 2026-06-01 15:50 น. (GMT+7)
 
 ---
 
 ## 📋 To-Do
 
-| Project | Owner | Description | Due | Notes |
-|---|---|---|---|---|
-| louis | claude-code | CV + diary + wiki system | — | Core repo work |
+(none yet)
 
 ---
 
 ## 🚀 In Progress
 
-(none yet)
+| Project | Owner | Description | Due | Notes |
+|---|---|---|---|---|
+| louis | claude-code | Setup Project Management Wiki (Issue #3) | — | Test ingest of the wiki flow → [status log](./projects/louis/status.md) |
 
 ---
 
@@ -35,7 +35,3 @@
 Quick links to project details:
 
 - **louis** — [projects/louis/README.md](./projects/louis/README.md) — Wasin's portfolio repo + AI infrastructure
-
----
-
-*Status: to-do (1) | in-progress (0) | blocked (0) | done (0)*
