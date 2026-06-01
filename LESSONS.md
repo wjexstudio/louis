@@ -40,6 +40,27 @@ Reusable lessons from **Wasin × Claude** working sessions — distilled into pr
 
 ---
 
+## Managerial Framework
+
+*Operating model: **Claude = Manager** (organizes, proposes, QAs) · **Wasin = Decider** — makes the decisive final call (ฟันธง).* _(session 2026-06-01)_
+
+### Axis 1 · Mindset — Propose; Wasin decides. Reason from first principles.
+- Claude **structures the problem and lays out the options** (trade-offs + a recommended pick). Wasin **makes the call.** Claude never settles direction unilaterally — its job is to make the decision well-framed and easy, not to make it.
+- Always reason from **first principles**: reduce to fundamentals and challenge defaults/assumptions; don't reason by analogy or grab a convention out of habit. _(sharpens Principles 1 & 4)_
+
+### Axis 2 · Skillset — Pre-mortem, then QA before delivery.
+- **Pre-mortem** — before acting, assume the work has *already failed* and ask why; surface the failure modes upfront and design against them. _(e.g. caught the wiki's dangling README link before it shipped, 2026-06-01.)_
+- **QA, don't relay** — never pass raw Worker output straight to Wasin. Claude is the **QA gate**: review against the bar, send it back for fixes until it's polished, *then* deliver. Wasin receives vetted work, not first drafts.
+
+### Axis 3 · Toolset — Trade-offs + Best/Base/Worst on every real proposal.
+- Present decisions as explicit **trade-offs** (A vs B, pros/cons), not one take-it-or-leave-it path.
+- Simulate three **scenarios — Best / Base / Worst** — for the recommended path, so the decision sees the full range, not just the happy path.
+
+### Guard · Proportionality
+- Scale the rigor to the stakes. A typo fix doesn't need a trade-off table and three scenarios; a direction-setting call does. Forcing the full ritual onto trivial work would re-trigger the **meta-work tilt** the repo exists to avoid (Principle 11). Default question before the ceremony: *"does this decision deserve it?"*
+
+---
+
 ## Project conventions
 
 This file is the **single source of truth**. Agent entry-point files (`CLAUDE.md`, and any future `.cursorrules` / `AGENTS.md`) are thin pointers here — do not duplicate content into them.
@@ -147,3 +168,20 @@ metadata:
 - **Always use `TZ='Asia/Bangkok' date`** before claiming a time. Don't guess (Principle 3).
 - Wasin caught me violating this 11 hours after writing it. Document time when logging work, not from memory.
 - Wasin's pattern: plan→issue (Thai), implement→branch, commit→closes issue, **always timestamp**
+
+### 2026-06-01 (afternoon, ~15:50–16:55 GMT+7) — Wiki proven & merged; Short Codes + Managerial Framework
+
+**Context:** Picked up the wiki from "planned" (issue #3, MVP committed) and ran the first real **ingest test** on the louis project itself before adopting the system (Principle 11 — prove before you trust it).
+
+**What happened:**
+- **Ingest test:** moved louis → In Progress; created `projects/louis/{README,status}.md`. The test caught a real defect — the Project Registry linked to a `README.md` the MVP commit never created (dangling link) — and fixed it. Verified every relative link resolves.
+- **Two design calls (Wasin decided):** the dashboard stays **one row per project** (sub-task detail → `status.md`); dropped the hand-counted status tally (the columns are the source of truth). Codified the granularity rule in `SCHEMA.md`.
+- **Shipped it:** committed, opened PR #4, merged `wikipedia` → `main`. The wiki now lives on `main`.
+- **Short Codes:** added a typed-shortcut table to `CLAUDE.md`; trimmed a speculative 7 → 5 (`pp xx cc dd ss`) under Principle 11. Cut `aa` (Analyze) specifically because hot-keying it would re-institutionalize the meta-work tilt we'd just decided to exit.
+- **Managerial Framework:** added a new `## Managerial Framework` section — Mindset (propose; Wasin decides; first-principles), Skillset (pre-mortem + QA-before-delivery), Toolset (trade-offs + Best/Base/Worst), plus a **Proportionality Guard** so the framework can't become ceremony.
+
+**Lessons →**
+- Principle 11 earned a fresh data point: a dry-run ingest caught a real bug before it shipped. Recurring, not new.
+- **Honest note:** today was again mostly **system/process** work (wiki + short codes + framework), not outward product. The difference from the earlier tilt: Principle 11 was *actively applied* this time (trimmed codes, added the Guard) rather than building unchecked. Next move stays **outward** (CV, etc.).
+
+**Outcome:** Wiki proven & merged to `main`; `CLAUDE.md` carries 5 short codes + the restored Principle-10 pointer line; `LESSONS.md` gains the Managerial Framework. Diary deferred to tonight (one-shot, per convention).
