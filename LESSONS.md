@@ -187,3 +187,21 @@ metadata:
 - **Honest note:** today was again mostly **system/process** work (wiki + short codes + framework), not outward product. The difference from the earlier tilt: Principle 11 was *actively applied* this time (trimmed codes, added the Guard) rather than building unchecked. Next move stays **outward** (CV, etc.).
 
 **Outcome:** Wiki proven & merged to `main`; `CLAUDE.md` carries 5 short codes + the restored Principle-10 pointer line; `LESSONS.md` gains the Managerial Framework. Diary deferred to tonight (one-shot, per convention).
+
+### 2026-06-01 (evening, ~17:00–21:15 GMT+7) — Profile Showcase, ecosystem diagram, visual persona
+
+**Context:** Turned the wiki/framework groundwork outward into a public-facing Profile Showcase for Louis, plus her first visual identity.
+
+**What happened:**
+- **Showcase README:** rewrote `README.md` as a first-person profile of Louis (identity, model-agnostic core, manager/decider roles, key skills, ecosystem). Plan-first via issue #5.
+- **Style convention earned:** Wasin cut all emoji and inline em-dashes from docs (kept `---` rules). Cleaner reads as more professional; applied repo-wide from now.
+- **Ecosystem diagram (Excalidraw):** workflow B worked end-to-end — I authored a `.excalidraw` starter, Wasin refined it in the GUI and exported `ecosystem.svg` (Embed scene ON = render + editable source in one file). Settled on one-file SSOT after catching a two-source drift. Issue #6 opened for the wider visual stack (Lucide + theSVG + Sarabun).
+- **Visual persona:** added an avatar (Gen Z woman; slate blazer, manilla-beige top, copper headphones, tablet) and the "A Face for the Voice" section; reconciled the prose to the real photo.
+- **Identity convention:** Louis is female — she/her, เธอ, Thai ends in ค่ะ. Recorded in Project conventions so it survives a context clear.
+
+**Lessons (the day's analysis, folded in — no separate `aa` pass):**
+- The Managerial Framework got its first real workout: pre-mortem caught a dangling link, a file drift, and the Zone.Identifier junk; the Proportionality guard stopped a converter rabbit hole.
+- **Watch the next tilt:** today built Louis's *identity and system* heavily again, but it landed real public artifacts (showcase + diagram + avatar), not just scaffolding, so it earned its keep. Guard for next session: identity-building must not become the new meta-work tilt. The next move is outward *use* (the article, CV), not more persona polish.
+- Plan-first held this time (issues #5, #6) after the earlier miss; "new project → `pp` first" is becoming reflex.
+
+**Outcome:** README showcase + ecosystem diagram + avatar live on `wikipedia` (through commit `2fa7e26`). `#5` closes on merge to `main`; `#6` (CV icon/font migration) still open.
