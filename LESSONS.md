@@ -114,4 +114,13 @@ metadata:
 
 **Outcome:** Renamed `blog/` → `diaries/` with date-only filenames; completed the 31 May diary to cover the full day; created the **retrospective** genre (`diaries/retrospective/`) to keep cross-cutting analysis out of the daily diary; added the "form is not a cage" note to the diary convention; brought this log current.
 
-**Open work (optional, memory hygiene):** write the dangling `direct-honest-feedback` memory, add a `user` memory about Wasin, and settle whether memory files should be Thai or English.
+**Later that night:** did the memory hygiene (collapsed duplicate memories into one pointer + a `wasin-profile`, removed the dangling link, settled language); added the **memory charter** (public/private boundary) and the **pointer-memory schema** standard with the `target_hash` self-healing idea.
+
+### 2026-06-01 (morning) — The meta-work tilt
+**Context:** Third "analyse everything" pass.
+
+**What happened:** The data was blunt — of 1 June's commits, *100% were process/system, zero were outward product*. Three days in, the repo is an elaborate process cathedral (11 principles, charter, diary system, self-healing pointer schema) wrapped around just 2 CVs. And the pointer self-healing system was built for *one* pointer and *zero* agents the same hour Principle 11 ("don't fall in love with a system before it's proven") was written — the same write-the-lesson-then-break-it pattern, one level up.
+
+**Lesson (no new principle — this is Principle 1 + 11 recurring):** a system exists to serve real output; when building the system *becomes* the work, stop. An analysis is worthless unless it changes behaviour — so the response to this one is **not** another retrospective or a Principle 12, but a behavioural pivot: **exit the analyse→build→analyse loop and ship outward work.**
+
+**Decision:** Park the `target_hash` refresh policy (auto vs human-confirmed) until a real Knowledge-Agent exists to need it — itself an instance of "no system before the need." Next move: outward product, not more scaffolding.
