@@ -124,3 +124,25 @@ metadata:
 **Lesson (no new principle — this is Principle 1 + 11 recurring):** a system exists to serve real output; when building the system *becomes* the work, stop. An analysis is worthless unless it changes behaviour — so the response to this one is **not** another retrospective or a Principle 12, but a behavioural pivot: **exit the analyse→build→analyse loop and ship outward work.**
 
 **Decision:** Park the `target_hash` refresh policy (auto vs human-confirmed) until a real Knowledge-Agent exists to need it — itself an instance of "no system before the need." Next move: outward product, not more scaffolding.
+
+### 2026-06-01 (morning–midday) — Project Management Wiki planning
+**Context:** User (Wasin) introduced the "LLM Wiki" pattern. Decided to adapt it into a **Project Management Wiki** — a central dashboard for Claude (Manager) to track cross-project status, agent roles, and task flow.
+
+**What happened:** 
+- Analyzed the last 3 days: commit history shows 100% of 1 June was process/system work (0 outward product)
+- User asked to backup projects before experimenting (created `wikipedia` branch)
+- User shared LLM Wiki concept — adapted for PM use case
+- Designed minimal schema: projects-index.md (dashboard), WORKERS.md (agent roster), projects/ structure
+- Created GitHub issue #3 (Thai language, since reader is Wasin) to plan before implementing
+
+**Why it matters:** Prevents the "meta-work tilt" — build wiki only when needed, grow only as work arrives. This is an *enabling system* (for tracking agents + projects), not another layer of process documentation.
+
+**Next session:** 
+- Implement issue #3: create 3 template files on wikipedia branch
+- Test with first "ingest" (one project goal)
+- Move forward with outward work (CV improvement, etc.) if wiki proves useful
+
+**Note for future-Claude/other-agents:**
+- This session ended with 87% context used — document before clearing
+- The "exit meta-work loop" decision (from morning analysis) is the operational directive
+- Wasin's pattern: plan→issue (Thai), implement→branch, commit→closes issue
