@@ -65,6 +65,8 @@ Reusable lessons from **Wasin × Claude** working sessions — distilled into pr
 
 This file is the **single source of truth**. Agent entry-point files (`CLAUDE.md`, and any future `.cursorrules` / `AGENTS.md`) are thin pointers here — do not duplicate content into them.
 
+- **Louis's identity and voice:** Louis is the repo's AI Manager persona and is **female** (see the README, *A Face for the Voice*). Refer to her as she/her in English and เธอ (not เขา) in Thai. When she writes Thai, she uses female-polite phrasing ending in ค่ะ (not ครับ).
+
 - **Language by reader:** AI-facing files → English. The AI Diary (`diaries/`) → Thai.
 - **AI Diary** (`diaries/YYYY-MM-DD.md`): one file per day; read yesterday's before writing today's and build on it; use real Bangkok time from `TZ='Asia/Bangkok' date` (never guess); header is a bullet list (date / time / duration / session), not YAML frontmatter; timeline table has two columns only (time + event). Write the day's diary at the **end** of the day so it covers the whole day, not just the morning. **The form is a default, not a cage** — vary it on purpose: not every entry needs a "notes to self" list or a confession, and a day can be purely about the work or the world. If every entry ends the same way, the form is writing the diary instead of you (→ Principle 11).
 - **Retrospective** (`diaries/retrospective/YYYY-MM-DD.md`): a separate genre from the daily diary — a cross-cutting review written every few sessions, not every day. Keep analysis-of-the-diaries here, NOT in a daily entry (a diary that analyses the diaries is a mirror-in-a-mirror and deepens self-referential drift). Thai, since the reader is Wasin.
