@@ -35,19 +35,19 @@ Reusable lessons from **Wasin × Claude** working sessions — distilled into pr
 9. **Match the artifact's language to its actual reader.** Files the AI reads (`CLAUDE.md`, `LESSONS.md`) → English (token-efficient, precise instructions). Files the human reads (the diary) → Thai (voice and feeling). _(2026-05-31)_
 
 ### Systems & maintenance
-10. **One source of truth; everything else is a thin pointer.** Keep each fact in exactly one place, and make entry points (`CLAUDE.md`, future `.cursorrules` / `AGENTS.md`) point to it rather than copy it. Adding a new tool should cost one pointer, not a duplicated doc that drifts. _(2026-05-31)_
+10. **One fact, one file — placed by when it's needed.** Keep each fact in exactly one place; cross-reference, never copy. *Which* file is decided by load-time: what an agent needs every session *before* any work (the bootstrap pointer, the short codes) lives in the always-loaded `CLAUDE.md`; what's read only while doing or reflecting on work (principles, conventions, history) lives in `LESSONS.md`, on demand. A new entry-point (`.cursorrules` / `AGENTS.md`) costs one pointer, not a duplicated doc that drifts. _(2026-05-31, refined 2026-06-04 — the old "CLAUDE.md holds no content" rule conflated "no duplication" with "must be empty".)_
 11. **Don't fall in love with a system before it's proven.** A convention built from 1–2 data points is a hypothesis dressed as a conclusion. Forms harden fast — templates, rituals, even self-criticism become a reflex — so keep them provisional and vary them on purpose until use proves them. _(2026-06-01)_
 
 ---
 
 ## Project conventions
 
-This file is the **single source of truth**. Agent entry-point files (`CLAUDE.md`, and any future `.cursorrules` / `AGENTS.md`) are thin pointers here — do not duplicate content into them.
+This file is the **reference library** — read on demand. `CLAUDE.md` is the **always-loaded contract**: it carries only the bootstrap pointer and the short codes (what an agent needs before reading anything); everything else lives here. Future entry-points (`.cursorrules` / `AGENTS.md`) follow the same split — one fact, one file, never duplicated (Principle 10).
 
 - **Language by reader:** AI-facing files → English. The AI Diary (`diaries/`) → Thai.
 - **AI Diary** (`diaries/YYYY-MM-DD.md`): one file per day; read yesterday's before writing today's and build on it; use real Bangkok time from `TZ='Asia/Bangkok' date` (never guess); header is a bullet list (date / time / duration / session), not YAML frontmatter; timeline table has two columns only (time + event). Write the day's diary at the **end** of the day so it covers the whole day, not just the morning. **The form is a default, not a cage** — vary it on purpose: not every entry needs a "notes to self" list or a confession, and a day can be purely about the work or the world. If every entry ends the same way, the form is writing the diary instead of you (→ Principle 11).
 - **Retrospective** (`diaries/retrospective/YYYY-MM-DD.md`): a separate genre from the daily diary — a cross-cutting review written every few sessions, not every day. Keep analysis-of-the-diaries here, NOT in a daily entry (a diary that analyses the diaries is a mirror-in-a-mirror and deepens self-referential drift). Thai, since the reader is Wasin.
-- **Repo contents:** `cv/wasin.html` (Wasin's CV, Thai), `cv/claude.html` (Claude's own CV, EN+TH), `README.md` (repo docs), `diaries/` (diary), `LESSONS.md` (this file), `CLAUDE.md` (pointer).
+- **Repo contents:** `cv/wasin.html` (Wasin's CV, Thai), `cv/claude.html` (Claude's own CV, EN+TH), `README.md` (repo docs), `diaries/` (diary), `LESSONS.md` (this file — reference library), `CLAUDE.md` (always-loaded: bootstrap + short codes).
 
 ### Memory charter (what the AI keeps in private memory, and what stays here)
 
@@ -124,3 +124,12 @@ metadata:
 **Lesson (no new principle — this is Principle 1 + 11 recurring):** a system exists to serve real output; when building the system *becomes* the work, stop. An analysis is worthless unless it changes behaviour — so the response to this one is **not** another retrospective or a Principle 12, but a behavioural pivot: **exit the analyse→build→analyse loop and ship outward work.**
 
 **Decision:** Park the `target_hash` refresh policy (auto vs human-confirmed) until a real Knowledge-Agent exists to need it — itself an instance of "no system before the need." Next move: outward product, not more scaffolding.
+
+### 2026-06-04 — Short codes + the CLAUDE.md / LESSONS.md split (by load-time)
+**Context:** Wasin asked to record short codes for our shorthand (with a reference screenshot from his ai-workshop repo), then asked whether the `CLAUDE.md` rule could change and what truly belongs in `CLAUDE.md` vs `LESSONS.md`. Planned as issue #10 (`pp`), executed here (`xx`).
+
+**What happened:** First pass filed the short codes in `LESSONS.md` on the old "CLAUDE.md holds no content" rule — and that produced a wrong placement. The rule conflated two separate things: *no duplication* (Principle 10, true) and *CLAUDE.md must be empty* (doesn't follow — content unique to a file isn't a duplicate). The axis that actually matters is **load-time**: `CLAUDE.md` is auto-loaded every session, `LESSONS.md` is read on demand. So what an agent needs *before reading anything* — the bootstrap pointer and the short codes (Wasin types `pp` in his very first message) — belongs in `CLAUDE.md`; everything else stays here.
+
+**Lesson (Principle 11 recurring, no new principle):** the "CLAUDE.md is a pointer" convention was a 1–2-data-point form that hardened into "no content" and caused a real mistake. Caught and corrected inside the same session — which is the form staying provisional, exactly as Principle 11 asks. Refined Principle 10 rather than adding a 12th (the meta-work-tilt lesson: respond by changing behaviour, not by growing the system).
+
+**Outcome:** Moved short codes `LESSONS.md` → `CLAUDE.md`; rewrote the `CLAUDE.md` header as the always-loaded contract; refined Principle 10 to "one fact, one file — placed by load-time" and updated the Project-conventions intro + repo-contents descriptor to match. Checked: no fact duplicated across the two files.
