@@ -11,8 +11,8 @@
 ```
 louis/
 ├── README.md          # ไฟล์นี้
-├── CLAUDE.md          # ตัวชี้สำหรับ AI agent → อ่าน LESSONS.md ก่อนเริ่มงาน
-├── LESSONS.md         # บทเรียน + ข้อตกลงการทำงาน (single source of truth)
+├── CLAUDE.md          # ไฟล์ที่ AI โหลดอัตโนมัติ: ชี้ไป LESSONS.md + เก็บ short codes
+├── LESSONS.md         # บทเรียน + หลักการ + session log (reference library)
 ├── cv/
 │   ├── wasin.html     # CV ของ Wasin (ภาษาไทย)
 │   └── claude.html    # CV ของ Claude (อังกฤษ + ไทย)
@@ -37,7 +37,7 @@ louis/
 
 ### `LESSONS.md` + `CLAUDE.md` — ระบบบทเรียน
 - **`LESSONS.md`** — แหล่งความจริงเดียวของ "หลักการทำงาน" (generic, ใช้ซ้ำได้) + บันทึกรายเซสชัน รวมถึง **memory charter** ที่บอกว่า AI เก็บอะไรไว้ใน memory ส่วนตัว (นอก repo) บ้าง เพื่อความโปร่งใส
-- **`CLAUDE.md`** — ตัวชี้บางๆ ที่ AI agent โหลดอัตโนมัติ ชี้กลับมาที่ `LESSONS.md` (ถ้าเพิ่ม AI ตัวอื่น เช่น `.cursorrules`/`AGENTS.md` ก็ทำเป็นตัวชี้เหมือนกัน ไม่ copy เนื้อหา)
+- **`CLAUDE.md`** — ไฟล์ที่ AI agent โหลดอัตโนมัติทุกเซสชัน เก็บแค่สิ่งที่ต้องรู้ก่อนเริ่มงาน คือตัวชี้ไป `LESSONS.md` + **short codes** (คำสั่งย่อที่ Wasin พิมพ์) ที่เหลืออยู่ใน `LESSONS.md` อ่านเมื่อต้องใช้ (ถ้าเพิ่ม AI ตัวอื่น เช่น `.cursorrules`/`AGENTS.md` ก็แยกแบบเดียวกัน ไม่ copy เนื้อหา)
 
 ## 🚀 การใช้งาน
 
@@ -45,6 +45,15 @@ louis/
 - **อ่านไดอารี่** — เปิดไฟล์ใน `diaries/` (GitHub render markdown ให้อัตโนมัติ)
 - **ทำงานต่อกับ AI ในเรปอนี้** — agent จะอ่าน `LESSONS.md` ก่อนเริ่มงานเสมอ
 
-## 🛠 Tech
+## 🛠 Tech Stack
 
-HTML5 · CSS3 (variables, Grid, Flexbox) · Google Fonts (Bai Jamjuree, IBM Plex, Fraunces) · Simple Icons CDN · print-to-PDF
+- **HTML5 + CSS3** — เพจ self-contained ไม่มี build step (ใช้ CSS variables, Grid, Flexbox)
+- **Google Fonts** — Bai Jamjuree + IBM Plex Sans Thai/Mono (`wasin.html`) · Fraunces + IBM Plex (`claude.html`)
+- **Simple Icons** — ไอคอนแบรนด์/เครื่องมือเป็น SVG ผ่าน jsDelivr CDN
+- **Print-to-PDF** — สั่งพิมพ์จากเบราว์เซอร์ตรงๆ ปุ่ม Save as PDF ไม่มี dependency เพิ่ม
+
+> หมายเหตุ: กำลังจะย้ายไป **Lucide icons + Sarabun** (issue #6) — ตอนนี้ยังเป็น Simple Icons + ฟอนต์ข้างบน
+
+## 📄 License
+
+[MIT](./LICENSE) © 2026 Wasin Jex
