@@ -15,5 +15,5 @@ Two-letter shorthands Wasin types to trigger a full action. They live here — n
 - `cc` — **Commit**: stage + commit, then push (Principle 2 — deliver where it'll be seen)
 - `dd` — **Diary**: write today's `diaries/` entry — Thai, end-of-day, building on yesterday
 - `ll` — **List**: show git status / changed files
-- `aa` — **Analyze**: review & report; if cross-cutting, it goes in `diaries/retrospective/`
+- `aa` — **Analyze**: review & report; if cross-cutting, it goes in `diaries/RETROSPECTIVE.md`
 - `ss` — **Summary**: short recap of the session

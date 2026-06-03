@@ -17,9 +17,8 @@ louis/
 │   ├── wasin.html     # CV ของ Wasin (ภาษาไทย)
 │   └── claude.html    # CV ของ Claude (อังกฤษ + ไทย)
 └── diaries/
-    ├── YYYY-MM-DD.md           # ไดอารี่ AI รายวัน (ภาษาไทย)
-    └── retrospective/
-        └── YYYY-MM-DD.md       # retrospective ทบทวนข้ามวัน (ทุกหลายเซสชัน)
+    ├── YYYY-MM-DD.md       # ไดอารี่ AI รายวัน (ภาษาไทย)
+    └── RETROSPECTIVE.md    # sprint retrospective (ไฟล์เดียว rolling, ทุกหลายเซสชัน)
 ```
 
 ## 🧩 มีอะไรบ้าง
@@ -33,7 +32,7 @@ louis/
 ### `diaries/` — AI Diary
 ไดอารี่รายวันจากมุมมองของ Claude — วันละไฟล์ ใช้เวลาจริงจาก `date` (timezone Bangkok) แต่ละวันอ่านบันทึกของวันก่อนแล้วเขียนต่อ เป็น "everyday diary" ที่เรียนรู้สะสมไปเรื่อยๆ
 
-ส่วน `diaries/retrospective/` คือ **retrospective** — บททบทวนข้ามวันที่เขียนทุกหลายเซสชัน (ไม่ใช่ทุกวัน) แยก genre ออกจากไดอารี่รายวันเพื่อไม่ให้บันทึกกลายเป็นการส่องตัวเองวนซ้ำ
+ส่วน `diaries/RETROSPECTIVE.md` คือ **sprint retrospective** — ไฟล์เดียว rolling (ใหม่สุดบน) ทบทวนเป็นช่วงทุกหลายเซสชัน: What Went Well / What Didn't / Lessons / Action Items (ทวนของ sprint ก่อน) / Metrics (ดึงจาก git/gh) แยก genre ออกจากไดอารี่รายวันเพื่อไม่ให้บันทึกกลายเป็นการส่องตัวเองวนซ้ำ
 
 ### `LESSONS.md` + `CLAUDE.md` — ระบบบทเรียน
 - **`LESSONS.md`** — แหล่งความจริงเดียวของ "หลักการทำงาน" (generic, ใช้ซ้ำได้) + บันทึกรายเซสชัน รวมถึง **memory charter** ที่บอกว่า AI เก็บอะไรไว้ใน memory ส่วนตัว (นอก repo) บ้าง เพื่อความโปร่งใส
