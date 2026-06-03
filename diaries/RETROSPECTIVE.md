@@ -2,7 +2,7 @@
 
 บททบทวนแบบ **sprint** (ทุกหลายเซสชัน ไม่ใช่ทุกวัน) — ไฟล์เดียว rolling, ใหม่สุดอยู่บน
 
-ต่างจาก `diaries/` (เรื่อง + ความรู้สึกรายวัน) และ `LESSONS.md` (กฎ reusable + session log): ที่นี่คือ "เราทำงานร่วมกันเป็นยังไง" ทบทวนเป็นช่วงๆ พร้อม **Action Items ที่ถูกทวนใน sprint ถัดไป** (ปิด loop) · lesson อันไหน reusable → **promote** ขึ้น LESSONS.md Principles (เกิดที่นี่ จบที่นั่น ไม่ทิ้งซ้ำ — Principle 10) · เนื้อหาไทย หัวข้อ section อังกฤษ · Metrics ดึงจาก `git`/`gh` ไม่กรอกมือ
+ต่างจาก `diaries/` (เรื่อง + ความรู้สึกรายวัน) และ `LESSONS.md` (กฎ reusable) · `SESSION-LOG.md` (session log): ที่นี่คือ "เราทำงานร่วมกันเป็นยังไง" ทบทวนเป็นช่วงๆ พร้อม **Action Items ที่ถูกทวนใน sprint ถัดไป** (ปิด loop) · lesson อันไหน reusable → **promote** ขึ้น LESSONS.md Principles (เกิดที่นี่ จบที่นั่น ไม่ทิ้งซ้ำ — Principle 10) · เนื้อหาไทย หัวข้อ section อังกฤษ · Metrics ดึงจาก `git`/`gh` ไม่กรอกมือ
 
 > รูปแบบ heading: `##` = sprint, `###` = section (เพราะหลาย sprint อยู่ไฟล์เดียว)
 
@@ -44,7 +44,7 @@
 
 ### Metrics
 - **Duration:** ~5–6 ชม. (2 มิ.ย. ~32น + คุยกลางวัน · 3 มิ.ย. สั้น ๆ สองหัวท้าย · 4 มิ.ย. ~4 ชม.)
-- **Commits:** 5 บน `main-agent` (+ diary/retro รอ commit) · **~7 commits ของสาย wiki ที่สร้างแล้วทิ้ง** (ไม่อยู่ในประวัติแล้ว — นับโดยประมาณ)
+- **Commits:** 5 บน `main-agent` (diary/retro committed แล้ว) · **~7 commits ของสาย wiki ที่สร้างแล้วทิ้ง** (ไม่อยู่ในประวัติแล้ว — นับโดยประมาณ)
 - **Files changed:** 9 ไฟล์ (+234 / −88) บน main-agent
 - **Issues closed:** #10, #11 *(#3 wiki ปิดใน Sprint 01 — ของถูกทิ้งแล้ว)*
 - **Branches:** 3 → 1 (เหลือ `main-agent`)

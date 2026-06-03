@@ -9,7 +9,7 @@ Reusable lessons from **Wasin × Claude** working sessions — distilled into pr
 ## How to use this file
 
 - **Before starting new work** → read the "Principles" section below.
-- **At the end of a session with a lesson** → add an entry to the "Session Log".
+- **At the end of a session** → append a terse entry to **`SESSION-LOG.md`** (`sl`) — it auto-loads as the next session's snapshot.
 - **If a lesson is generic enough** → promote it up into "Principles" (note which session it came from).
 - **Keep the list lean.** Before adding a principle, check it doesn't fold into an existing one. New principles are provisional until they recur across 2+ sessions; merge duplicates and retire ones that stop earning their place. A list too long to hold in your head is one nobody reads.
 
@@ -47,7 +47,7 @@ This file is the **reference library** — read on demand. `CLAUDE.md` is the **
 - **Language by reader:** AI-facing files → English. The AI Diary (`diaries/`) → Thai.
 - **AI Diary** (`diaries/YYYY-MM-DD.md`): one file per day; read yesterday's before writing today's and build on it; use real Bangkok time from `TZ='Asia/Bangkok' date` (never guess); header is a bullet list (date / time / duration / session), not YAML frontmatter; timeline table has two columns only (time + event). Write the day's diary at the **end** of the day so it covers the whole day, not just the morning. **The form is a default, not a cage** — vary it on purpose: not every entry needs a "notes to self" list or a confession, and a day can be purely about the work or the world. If every entry ends the same way, the form is writing the diary instead of you (→ Principle 11).
 - **Sprint retrospective** (`diaries/RETROSPECTIVE.md`): one **rolling file, newest sprint on top** — a cross-cutting review written every few sessions, not every day. Five sections (`What Went Well` / `What Didn't Go Well` / `Lessons Learned` / `Action Items` / `Metrics`); `##` = sprint, `###` = section. **Carry the previous sprint's Action Items forward and check them off** — close the loop, or they're decoration. **Metrics come from `git`/`gh`, never hand-typed** (Principle 3); only Duration comes from the diary headers. Reusable items under `Lessons Learned` get **promoted** up to Principles — observed here, graduated there, never duplicated (Principle 10). Thai (reader is Wasin), English section labels. Keep analysis-of-the-diaries here, NOT in a daily entry (a diary that analyses the diaries is a mirror-in-a-mirror and deepens self-referential drift).
-- **Repo contents:** `cv/wasin.html` (Wasin's CV, Thai), `cv/claude.html` (Claude's own CV, EN+TH), `README.md` (repo docs), `diaries/` (diary), `LESSONS.md` (this file — reference library), `CLAUDE.md` (always-loaded: bootstrap + short codes).
+- **Repo contents:** `cv/` (CVs), `README.md` (repo docs), `diaries/` (daily diary + `RETROSPECTIVE.md` sprint retros), `LESSONS.md` (this file — principles + conventions), `SESSION-LOG.md` (terse session log, auto-loaded via `CLAUDE.md`), `COLLABORATION.md` (how Wasin × Claude work together), `CLAUDE.md` (always-loaded: bootstrap + short codes + `@SESSION-LOG.md`).
 
 ### Memory charter (what the AI keeps in private memory, and what stays here)
 
@@ -92,46 +92,4 @@ metadata:
 
 ## Session Log
 
-### 2026-05-31 — CV review + AI Diary system
-**Context:** Started with a blunt review of the CV (now `cv/wasin.html`), then built the AI Diary in `diaries/`.
-
-**What happened:** The diary work took ~4 rounds — (1) written but not pushed, so it was invisible; (2) guessed the time instead of running `date`; (3) chose YAML frontmatter that GitHub renders as an ugly table; (4) had to rework the timeline format and set up the everyday-diary system.
-
-**Lessons →** distilled into Principles 1–8 above. Root cause: "executing instructions literally instead of understanding the real need from the start."
-
-**Later in the same session:** discussed who actually reads `LESSONS.md` (answer: future-me, the AI — not the public) and that it should be wired into `CLAUDE.md` to guarantee it gets read; also decided AI-facing files should be English → Principle 9, and this file was translated to English.
-
-**Outcome:** Set the diary convention (one file per day, read the previous day before writing, real timestamps from `date`, "less but real" format), created this `LESSONS.md`, and wired it into `CLAUDE.md`.
-
-**Later that afternoon/evening:** built the single-source-of-truth + thin-pointer architecture (→ Principle 10); wrote Claude's own CV (`cv/claude.html`, original design, not copied from Wasin's); reorganized the repo (CVs into `cv/` via `git mv`, planned as issue #2 first, then implemented); and fixed CV issues 1–3 (experience ordering, duplicate entry, the "8+ years" overclaim). All committed and pushed.
-
-### 2026-06-01 — Self-audit + retrospective genre
-**Context:** Asked to analyse the style, lessons, and diaries as a whole.
-
-**What happened:** The audit found the forms were already hardening on thin data — diary endings turning formulaic, confession becoming a fixed beat, the diary increasingly about itself. Caught two self-violations: the 31 May diary covered only the morning (broke "deliver where it'll be seen" / write-at-end-of-day), and this Session Log had gone stale (broke this file's own first rule).
-
-**Lessons →** Principle 11 (don't fall in love with a system before it's proven) and the "keep the list lean" guard in *How to use this file*.
-
-**Outcome:** Renamed `blog/` → `diaries/` with date-only filenames; completed the 31 May diary to cover the full day; created the **retrospective** genre (`diaries/retrospective/`) to keep cross-cutting analysis out of the daily diary; added the "form is not a cage" note to the diary convention; brought this log current.
-
-**Later that night:** did the memory hygiene (collapsed duplicate memories into one pointer + a `wasin-profile`, removed the dangling link, settled language); added the **memory charter** (public/private boundary) and the **pointer-memory schema** standard with the `target_hash` self-healing idea.
-
-### 2026-06-01 (morning) — The meta-work tilt
-**Context:** Third "analyse everything" pass.
-
-**What happened:** The data was blunt — of 1 June's commits, *100% were process/system, zero were outward product*. Three days in, the repo is an elaborate process cathedral (11 principles, charter, diary system, self-healing pointer schema) wrapped around just 2 CVs. And the pointer self-healing system was built for *one* pointer and *zero* agents the same hour Principle 11 ("don't fall in love with a system before it's proven") was written — the same write-the-lesson-then-break-it pattern, one level up.
-
-**Lesson (no new principle — this is Principle 1 + 11 recurring):** a system exists to serve real output; when building the system *becomes* the work, stop. An analysis is worthless unless it changes behaviour — so the response to this one is **not** another retrospective or a Principle 12, but a behavioural pivot: **exit the analyse→build→analyse loop and ship outward work.**
-
-**Decision:** Park the `target_hash` refresh policy (auto vs human-confirmed) until a real Knowledge-Agent exists to need it — itself an instance of "no system before the need." Next move: outward product, not more scaffolding.
-
-### 2026-06-04 — Short codes + the CLAUDE.md / LESSONS.md split (by load-time)
-**Context:** Wasin asked to record short codes for our shorthand (with a reference screenshot from his ai-workshop repo), then asked whether the `CLAUDE.md` rule could change and what truly belongs in `CLAUDE.md` vs `LESSONS.md`. Planned as issue #10 (`pp`), executed here (`xx`).
-
-**What happened:** First pass filed the short codes in `LESSONS.md` on the old "CLAUDE.md holds no content" rule — and that produced a wrong placement. The rule conflated two separate things: *no duplication* (Principle 10, true) and *CLAUDE.md must be empty* (doesn't follow — content unique to a file isn't a duplicate). The axis that actually matters is **load-time**: `CLAUDE.md` is auto-loaded every session, `LESSONS.md` is read on demand. So what an agent needs *before reading anything* — the bootstrap pointer and the short codes (Wasin types `pp` in his very first message) — belongs in `CLAUDE.md`; everything else stays here.
-
-**Lesson (Principle 11 recurring, no new principle):** the "CLAUDE.md is a pointer" convention was a 1–2-data-point form that hardened into "no content" and caused a real mistake. Caught and corrected inside the same session — which is the form staying provisional, exactly as Principle 11 asks. Refined Principle 10 rather than adding a 12th (the meta-work-tilt lesson: respond by changing behaviour, not by growing the system).
-
-**Outcome:** Moved short codes `LESSONS.md` → `CLAUDE.md`; rewrote the `CLAUDE.md` header as the always-loaded contract; refined Principle 10 to "one fact, one file — placed by load-time" and updated the Project-conventions intro + repo-contents descriptor to match. Checked: no fact duplicated across the two files.
-
-**Later this session:** added a README Tech Stack (the *real* stack — CSS3 / Simple Icons / Bai Jamjuree + IBM Plex + Fraunces, not the image's Tailwind/Lucide/Sarabun, which is the still-open #6 migration) + an MIT `LICENSE`; and restructured retrospectives from the dated `diaries/retrospective/` folder into one rolling `diaries/RETROSPECTIVE.md` — five sections, `git`/`gh`-derived Metrics, and **action-item follow-through** (the one gap the old setup had: nothing closed the loop on commitments) — migrating Sprint 01 across. (Issues #10, #11.)
+Moved to **[`SESSION-LOG.md`](./SESSION-LOG.md)** — a terse, auto-loaded session log (newest on top), imported into `CLAUDE.md` via `@SESSION-LOG.md` so a fresh session sees where we are without reading anything. Full narrative lives in `diaries/`; reusable lessons graduate up into Principles above. Append a terse entry at each session's end (`sl`).

@@ -1,8 +1,10 @@
 # CLAUDE.md
 
-This file is **auto-loaded into every session**, so it carries only what an agent needs *before* reading anything: the bootstrap, and the short codes Wasin may type in his first message. Everything else lives in **[LESSONS.md](./LESSONS.md)**, read on demand. One fact, one file — cross-reference, never copy (Principle 10).
+This file is **auto-loaded into every session**, so it carries only what an agent needs *before* reading anything: the bootstrap, the short codes Wasin may type in his first message, and the session-log snapshot (imported below). Everything else lives in **[LESSONS.md](./LESSONS.md)**, read on demand. One fact, one file — cross-reference, never copy (Principle 10).
 
-**Before doing anything in this repo, read [LESSONS.md](./LESSONS.md)** — the single source of truth (principles, project conventions, memory charter, session log). When a session produces a lesson, add it to the Session Log there.
+**Before doing anything in this repo, read [LESSONS.md](./LESSONS.md)** — the single source of truth (principles, project conventions, memory charter). At the end of a session, append a terse entry to `SESSION-LOG.md` (`sl`).
+
+**Where we left off** (terse session log, newest on top) auto-loads here: @SESSION-LOG.md
 
 If another agent entry-point is added (`.cursorrules`, `AGENTS.md`, …), point it here + at `LESSONS.md` — don't duplicate.
 
@@ -17,3 +19,4 @@ Two-letter shorthands Wasin types to trigger a full action. They live here — n
 - `ll` — **List**: show git status / changed files
 - `aa` — **Analyze**: review & report; if cross-cutting, it goes in `diaries/RETROSPECTIVE.md`
 - `ss` — **Summary**: short recap of the session
+- `sl` — **Session log**: append a terse entry (done · state · next) to `SESSION-LOG.md` at session end
