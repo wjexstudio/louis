@@ -20,3 +20,4 @@ Two-letter shorthands Wasin types to trigger a full action. They live here — n
 - `aa` — **Analyze**: review & report; if cross-cutting, it goes in `diaries/RETROSPECTIVE.md`
 - `ss` — **Summary**: short recap of the session
 - `sl` — **Session log**: append a terse entry (done · state · next) to `SESSION-LOG.md` at session end
+- `bb` — **Build book**: regenerate the onboarding book in `book/` from the logs (runs the `book-builder` subagent; read-only on sources, writes only to `book/`)
