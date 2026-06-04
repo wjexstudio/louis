@@ -4,6 +4,11 @@ Terse session snapshots, **newest on top** — auto-loaded every session (via `@
 
 ---
 
+## 2026-06-04 (later) — Onboarding book + book-builder subagent (#13)
+- **Done:** `pp→xx` สำหรับ #13 — reframe จาก "หนังสือขายคนนอก" (tilt) → **onboarding book ให้ agent ใหม่** (ผู้อ่าน=AI → English, Principle 9). สร้าง `.claude/agents/book-builder.md` (read-only sources, เขียนเฉพาะ `book/`, ไม่ commit เอง) + `book/v1/` 6 บท + `latest→v1`; wire `bb` เข้า `CLAUDE.md`, noted `book/`+`.claude/agents/` ใน `LESSONS.md`. Facts verified จาก git (27 commits, 2026-05-29..06-04). commit `28f1b26`, ปิด #13.
+- **State:** `main-agent` clean เฉพาะงาน #13 — **ค้างก่อนเซสชัน:** `README.md` + `cv/*.html` ยัง `M` (ไม่ใช่งานนี้ ไม่แตะ). first real `bb` run ยังไม่ยืนยัน dispatch path (v1 generate เองรอบนี้).
+- **Next:** (1) รัน `bb` จริงให้ book-builder dispatch ทำงานจริง · (2) เพิ่ม `## Data Requirements` (เงื่อนไขฟอร์แมต input) ใน `book-builder.md` ให้ตรง reference · (3) สาง `README.md`/`cv/*.html` ที่ค้าง. Open: #1 CV v2, #6 visual stack; #8/#9 outward = deprioritized.
+
 ## 2026-06-04 — Short codes · load-time split · COLLABORATION · main-agent
 - **Done:** short codes → `CLAUDE.md`; load-time split of `CLAUDE.md`/`LESSONS.md` (#10); README Tech Stack (real stack) + MIT `LICENSE`; sprint-retro system `diaries/RETROSPECTIVE.md` + Sprint 02 (#11); statusline (branch + ctx%); **`COLLABORATION.md`** — ตัวแทน≠แทนที่ · เรียนรู้ซึ่งกันและกัน · ไม่ตัดสินใจสำคัญคนเดียว; relocated Session Log → this file (#12); diary 4 มิ.ย.
 - **State:** repo consolidated to one branch **`main-agent`** (now the default; dropped the wiki line `main`/`wikipedia`, salvaged 2–3 มิ.ย. diaries); working tree clean & pushed. Worktree at `/home/wasinjex/projects/agents` left detached on purpose.
